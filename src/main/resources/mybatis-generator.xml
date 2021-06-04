@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动 -->
+    <classPathEntry
+        location="D:/edm/mvnrepository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar" />
+    <context id="edm" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://172.16.20.50:10308/capital_cloud_test" userId="cloud_test" password="123456">
+            <!--connectionURL="jdbc:mysql://172.16.20.63:10308/capital_accelerator_test" userId="accelerator" password="123456">-->
+            <!--是否生成按主键查询sql,true：是;false：不生成-->
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.stock.accelerator.web.entity"
+            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="com.stock.accelerator.web.dao"
+            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+            targetPackage="com.stock.accelerator.web.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 要生成哪些表 -->
+        <!--<table tableName="banner_pic" domainObjectName="BannerPic"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="company_info" domainObjectName="CompanyInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="company_preference" domainObjectName="CompanyPreference"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="company_qualifications" domainObjectName="CompanyQualifications"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="local_company" domainObjectName="LocalCompany"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="local_company_preference" domainObjectName="LocalCompanyPreference"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="local_company_qualifications" domainObjectName="LocalCompanyQualifications"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="local_user_info" domainObjectName="LocalUserInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="maa_conf_label" domainObjectName="MaaConfLabel"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="region" domainObjectName="Region"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="register_company" domainObjectName="RegisterCompany"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <table tableName="sa_code" domainObjectName="SaCode"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <!--<table tableName="sa_menu" domainObjectName="SaMenu"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_parameter" domainObjectName="SaParameter"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_resource" domainObjectName="SaResource"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_role" domainObjectName="SaRole"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_role_menu" domainObjectName="SaRoleMenu"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_user" domainObjectName="SaUser"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sa_user_role" domainObjectName="SaUserRole"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity" domainObjectName="SysActivity"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_attendance" domainObjectName="SysActivityAttendance"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_banner" domainObjectName="SysActivityBanner"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_news" domainObjectName="SysActivityNews"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_route" domainObjectName="SysActivityRoute"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_sign" domainObjectName="SysActivitySign"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_sign_person" domainObjectName="SysActivitySignPerson"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_sign_person_copy" domainObjectName="SysActivitySignPerson"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+
+        <!--<table tableName="sys_activity_single" domainObjectName="SysActivitySingle"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_visible" domainObjectName="SysActivityVisible"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_consult" domainObjectName="SysConsult"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_consult_chat" domainObjectName="SysConsultChat"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_data_conf_label" domainObjectName="SysDataConfLabel"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_invite_code_info" domainObjectName="SysInviteCodeInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_invoice" domainObjectName="SysInvoice"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_pay_info" domainObjectName="SysPayInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_push" domainObjectName="SysPush"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_push_range" domainObjectName="SysPushRange"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_questionnaire" domainObjectName="SysQuestionnaire"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_questionnaire_answer" domainObjectName="SysQuestionnaireAnswer"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_questionnaire_options" domainObjectName="SysQuestionnaireOptions"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_questionnaire_problem" domainObjectName="SysQuestionnaireProblem"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_questionnaire_result" domainObjectName="SysQuestionnaireResult"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="user_info" domainObjectName="UserInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="user_message" domainObjectName="UserMessage"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="user_opinion" domainObjectName="UserOpinion"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_sign_record" domainObjectName="SysSignRecord"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_third_party_interface" domainObjectName="SysThirdPartyInterface"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="application_value_calendar" domainObjectName="ApplicationValueCalendar"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="point_info_record" domainObjectName="PointInfoRecord"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_class" domainObjectName="SysActivityClass"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+        <!--<table tableName="sys_activity_package" domainObjectName="SysActivityPackage"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>-->
+
+
+
+        <table tableName="activity_manage" domainObjectName="AppActivityManage"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_content" domainObjectName="AppActivityContent"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_setting" domainObjectName="AppActivitySetting"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_file_info" domainObjectName="AppActivityFileInfo"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_guest_person" domainObjectName="AppActivityGuestPerson"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_attend_person" domainObjectName="AppActivityAttendPerson"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_interact_question" domainObjectName="AppActivityInteractQuestion"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_interact_answer" domainObjectName="AppActivityInteractAnswer"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_meeting_agenda" domainObjectName="AppActivityMeetingAgenda"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+        <table tableName="activity_notice_log" domainObjectName="AppActivityNoticeLog"><generatedKey column="id" sqlStatement="SELECT CONCAT(uuid_short(),'')" identity="id" type="pre" /></table>
+
+    </context>
+</generatorConfiguration>
